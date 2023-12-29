@@ -32,7 +32,7 @@ class ModelName(str, Enum):
 
 class input(BaseModel):
     input: str
-    session_id: float | None = None
+    session_id: str | None = None
 
 load_dotenv()
 
@@ -68,7 +68,7 @@ async def lifespan(app: FastAPI):
         if file is None:
             print("Error: resume.json not found in database")
             return
-        resume = FileJson(text = file['doc']['text'], filename = 'resume', 
+        resume = FileJson(text = file['doc']['text'], filename = 'resume.json', 
                           tags=file['doc']['metadata']['tags'], 
                             url=file['doc']['metadata']['url'],
                             file=file['doc']['metadata']['file'])
