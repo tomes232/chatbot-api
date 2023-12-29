@@ -1,0 +1,10 @@
+.env
+.venv
+pdfs
+mo.py
+search.py
+__pycache__/
+pdfs/
+text/
+text_json/
+app/__pycache__/
